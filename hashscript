@@ -1,0 +1,12 @@
+#!/bin/bash
+crypt="1a1dc91c907325c69271ddf0c944bc72"
+echo "please enter a password"
+read inc
+hash="$((echo -n $inc|md5sum) | awk '{print $1}')"
+if [[ "$hash" == "$crypt" ]];
+then 
+	echo " logged in"
+else
+	echo "incorrect pass"
+fi
+
